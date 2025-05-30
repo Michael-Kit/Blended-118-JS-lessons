@@ -32,6 +32,27 @@
 // Виведіть в alert відповідне повідомлення, наприклад:
 // "10 входить в першу чверть"
 
+// const min = Math.floor(Math.random() * 60); // Генеруємо випадкове число від 0 до 59
+
+// let quarter;
+// if (min >= 0 && min <= 14) {
+//     quarter = "перша";
+// }
+// else if (min >= 15 && min <= 29) {
+//     quarter = "друга";
+// }
+// else if (min >= 30 && min <= 44) {
+//     quarter = "третя";
+// }
+// else {
+//     quarter = "четверта";
+// }
+
+// alert(`${min} входить в ${quarter} чверть`);
+
+// console.log(quarter);
+
+
 // const min = Math.floor(Math.random() * (59 - 0) + 0);
 
 // Генеруємо випадкове число від 0 до 59
@@ -122,18 +143,18 @@
 //todo:  А креще таке рішення ,через функцію( це надає можливість користуватися кодом в любому місті, можливо навіть
 //todo   функцію зберегти в окремому файлі і поті її виклакати де вона може бути потрібна)
 
-const totalMinutes = Number(prompt("Введіть кількість хвилин"));
+// const totalMinutes = Number(prompt("Введіть кількість хвилин"));
 
-function formatTime(totalMinutes) {
-    let hours = Math.floor(totalMinutes / 60);
-    let modefiedHours = String(hours).padStart(2, "0");
-    let minutes = totalMinutes % 60;
-    let modefiedMinutes = String(minutes).padStart(2, "0");
-    return `${modefiedHours}:${modefiedMinutes}`;
-}
+// function formatTime(totalMinutes) {
+//     let hours = Math.floor(totalMinutes / 60);
+//     let modefiedHours = String(hours).padStart(2, "0");
+//     let minutes = totalMinutes % 60;
+//     let modefiedMinutes = String(minutes).padStart(2, "0");
+//     return `${modefiedHours}:${modefiedMinutes}`;
+// }
 
 
-console.log(formatTime(totalMinutes));
+// console.log(formatTime(totalMinutes));
 
 
 // console.log(totalMinutes);
@@ -153,20 +174,63 @@ console.log(formatTime(totalMinutes));
 // Пароль перевіряти так:
 // Якщо введено пароль "Я головний",
 // то вивести в alert рядок "Добрий день!",
-// в іншому випадку вивести в alert рядок "Невірний пароль!"
+//     в іншому випадку вивести в alert рядок "Невірний пароль!"
+
+// const login = prompt("Введіть ваш логін:");
+
+// if (login === "Адмін") {
+//     const password = prompt("Введіть ваш пароль:");
+
+//     if (password === null || password === "") {
+//         alert("Скасовано");
+//     } else if (password === "Я головний") {
+//         alert("Добрий день!");
+//     } else {
+//         alert("Невірний пароль!");
+//     }
+// } else if (login === null || login === "") {
+//     alert("Скасовано");
+// } else {
+//     alert("Я вас не знаю");
+// }
+
+// console.log(login);
 
 // Завдання 6:
 
 // Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
 
+// function allNumbers() {
+//     let i = 0;
+//     while (i <= 20) {
+//         console.log(i);
+//         i++;
+//     }
+// }
+// allNumbers();
+// console.log("Цикл завершено");
+
+
 // Завдання 7:
 
-// Напишіть функцію getNumbers(min, max), що приймає 2 параметри - 
+// Напишіть функцію getNumbers(min, max), що приймає 2 параметри -
 // мінімальне і максимальне число відповідно.
 // Напишіть цикл всередині функції, який виводить у консоль
 // всі числа від max до min за спаданням.
 // Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
 // і поверніть її з функції.
+
+// function getNumbers(min, max) {
+//     let sum = 0;
+//     for (let i = max; i >= min; i--) {
+//         console.log(i);
+//         if (i % 2 === 0) {
+//             sum += i;
+//         }
+//     } return sum;
+// }
+
+// console.log(getNumbers(1, 10)); // Повертає суму парних чисел
 
 // Завдання 8:
 
@@ -174,12 +238,33 @@ console.log(formatTime(totalMinutes));
 // Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
 // повертати з функції рядок - 'Not a number!'.
 
+// function min(a, b) {
+//     if (typeof a !== 'number' || typeof b !== 'number') {
+//         return 'Not a number!';
+//     }
+//     return a < b ? a : b;
+// }
+
+// console.log(min("5", 10)); // Повертає 'Not a number!'
+// console.log(min(5, 10)); // Повертає 5
+
 // Завдання 9:
 
-// Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true, 
+// Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true,
 // якщо параметр age більше чи дорівнює 18.
-// В іншому випадку вона запитує підтвердження через confirm 
+// В іншому випадку вона запитує підтвердження через confirm
 // і повертає його результат (true/false).
+// function isAdult(age) {
+
+//     if (age >= 18) {
+//         return true;
+//     } else {
+//         return confirm("Вам менше 18 років. Ви впевнені, що хочете продовжити?");
+//     }
+    
+// }
+// console.log(isAdult(20)); // Повертає true
+// console.log(isAdult(16)); // Запитує підтвердження через confirm
 
 // Завдання 10:
 
@@ -188,7 +273,25 @@ console.log(formatTime(totalMinutes));
 // якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
 // якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
 
+// function fizzBuzz(num) {
+//     for (let i = 1; i <= num; i++) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//             console.log('fizzbuzz');
+//         }
+//         else if (i % 3 === 0) {
 
+//             console.log('fizz');
+//         }
+//         else if (i % 5 === 0) {
+//             console.log('buzz');
+//         }
+//         else {
+//             console.log(i);
+//         }
+//     }
+// }
+// // fizzBuzz(7);
+// fizzBuzz(15); // Виведе 'fizz', 'buzz', 'fizz', 'fizzbuzz' і т.д. для чисел від 1 до 15
 
 // Результат:
 
