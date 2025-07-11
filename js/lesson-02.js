@@ -16,14 +16,37 @@
 // styles[styles.indexOf("blues")] = "classic";
 
 // function logItems(array) {
-//     for (let i = 0; i < array.length; i++) {
+//     Нагадайте {
 //         console.log(`${i + 1} - ${array[i]}`);
 //     }
 // }
 // logItems(styles); // Виведе:
 // 1 - jazz
 // 2 - classic
-// 3 - rock-n-roll
+// 3 - rock - n - roll
+
+// Створення масиву styles
+// const styles = ["jazz", "blues"];
+
+// // Додавання 'rock-n-roll' до кінця масиву
+// styles.push("rock-n-roll");
+
+// // Заміна 'blues' на 'classic' за допомогою splice
+// const index = styles.indexOf("blues");
+// if (index !== -1) {
+//     styles.splice(index, 1, "classic");
+// }
+
+// // Функція logItems(array)
+// function logItems(array) {
+//     array.forEach((item, index) => {
+//         console.log(`${index + 1} - ${item}`);
+//     });
+// }
+
+// // Виклик функції logItems з масивом styles
+// logItems(styles);
+
 
 // Завдання 2:
 
@@ -45,7 +68,7 @@
 //     }
 // }
 // checkLogin(logins); // Якщо ввести "John", то виведе: "Welcome, John!"
-// Якщо ввести "Alice", то виведе: "User not found"
+// // Якщо ввести "Alice", то виведе: "User not found"
 
 // Завдання 3:
 
@@ -55,46 +78,94 @@
 // Додайте перевірку, що аргументи - це числа.
 
 // function calculateAverage(...args) {
-//     if (args.length === 0) {    
-//         return 0; // Якщо немає аргументів, повертаємо 0
-//     }
-//     let sum = 0;    
-//     let count = 0; // Лічильник для чисел
-//     for (const arg of args) {       
-//         if (typeof arg === 'number') { // Перевірка, чи є аргумент числом
-//             sum += arg; // Додаємо до суми  
-//             count++; // Збільшуємо лічильник
-//         }
-//     }       
-//     if (count === 0) { // Якщо немає чисел, повертаємо 0
+//     if (args.length === 0) {
 //         return 0;
 //     }
-//     return sum / count; // Повертаємо середнє значення
+//     let sum = 0;
+//     let count = 0;
+//     for (const arg of args) {
+//         if (typeof arg === 'number') {
+//             sum += arg;
+//             count++;
+//         }
+//     }
+//     if (count === 0) {
+//         return 0;
+//     }
+//     return sum / count;
 // }
 // console.log(calculateAverage(1, 2, 3, 4, 5)); // 3
-// console.log(calculateAverage(5, 'a', 10, true)); // 7.5 
+// console.log(calculateAverage(5, 'a', 10, true)); // 7.5
 // console.log(calculateAverage(10, 20, 30)); // 20
+// Покрокове пояснення:
+// Створюємо масив logins з іменами користувачів.
+
+// Запитуємо ім'я користувача через prompt(), яке записується у змінну name.
+
+// Перевіряємо, чи є введене ім'я у масиві logins.includes(name).
+
+// Якщо true, виводимо alert(Welcome, ${name}!).
+
+// Якщо false, виводимо alert("User not found").
 
 // Завдання 4:
 
-// Напишіть функцію, яка сумуватиме сусідні числа 
+// Напишіть функцію, яка сумуватиме сусідні числа
 // і пушитиме їх в новий масив.
 
 // const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
 
-// уточнення: складати необхідно перше число з другим, потім друге - з третім, 
+// уточнення: складати необхідно перше число з другим, потім друге - з третім,
 // третє - з четвертим і так до кінця.
 // В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
+
+// function sumAdjacentNumbers(arr) {
+//     const result = [];
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         result.push(arr[i] + arr[i + 1]);
+//     }
+//     return result;
+// }
+
+
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+// console.log(sumAdjacentNumbers(someArr)); // [33, 45, 39, 17, 25, 27, 29]
+
+// Як це працює:
+// Створюємо пустий масив result для збереження сум сусідніх чисел.
+
+// Перебираємо arr у циклі for, який іде до передостаннього елемента, оскільки останній не має сусіда справа.
+
+// Додаємо до result суму arr[i] + arr[i + 1].
+
+// Повертаємо новий масив.
+
 
 // Завдання 5:
 
 // Напишіть функцію findSmallestNumber(numbers),
 // яка шукає найменше число в масиві.
-// Додайте перевірку, що функція отримує саме масив, і 
+// Додайте перевірку, що функція отримує саме масив, і
 // якщо функція отримує масив - поверніть з функції найменше число,
 // в іншому випадку - поверніть 'Sory, it is not an array!'.
 
 // const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+
+// function findSmallestNumber(numbers) {
+//     if (!Array.isArray(numbers)) {
+//         return 'Sorry, it is not an array!';
+//     }
+
+//     return Math.min(...numbers);
+// }
+
+
+// const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+// console.log(findSmallestNumber(numbers)); // 2
+// console.log(findSmallestNumber("not an array")); // 'Sorry, it is not an array!'
+
+
+
 
 // Завдання 6:
 
